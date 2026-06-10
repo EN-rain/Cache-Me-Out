@@ -1,0 +1,148 @@
+{
+  "2020-01": [
+    {
+      "title": "Global tributes pour in after Kobe Bryant's death",
+      "description": "Athletes, artists, and meme pages worldwide reshared tribute art and highlight reels within hours.",
+      "category": "news",
+      "tags": ["kobe", "tributes", "sports", "global"],
+      "source_name": "International sports media",
+      "source_url": "https://en.wikipedia.org/wiki/Kobe_Bryant",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/88/Kobe_Bryant_2015.jpg",
+      "image_alt": "Kobe Bryant in 2015",
+      "confidence": "high"
+    },
+    {
+      "title": "Early pandemic memes spread before most lockdowns",
+      "description": "Hand-washing charts, mask jokes, and 'when corona hits' clips circulated across Weibo, Twitter, and WhatsApp.",
+      "category": "meme",
+      "tags": ["covid", "early-pandemic", "global"],
+      "source_name": "Social platforms",
+      "confidence": "medium"
+    }
+  ],
+  "2020-03": [
+    {
+      "title": "Tiger King becomes a global binge-watch",
+      "description": "Carole Baskin memes, Joe Exotic quotes, and reaction GIFs crossed language barriers within days.",
+      "category": "viral_moment",
+      "tags": ["tiger-king", "netflix", "memes"],
+      "source_name": "Netflix",
+      "source_url": "https://en.wikipedia.org/wiki/Tiger_King",
+      "confidence": "high"
+    },
+    {
+      "title": "Animal Crossing: New Horizons launches into lockdown life",
+      "description": "Players worldwide turned island life into a shared escape — trading turnips, visiting friends, and posting cozy screenshots.",
+      "category": "gaming",
+      "tags": ["animal-crossing", "nintendo", "lockdown"],
+      "source_name": "Nintendo",
+      "confidence": "high"
+    },
+    {
+      "title": "Lockdown humor goes international",
+      "description": "Balcony concerts, sourdough starters, and 'stay home' remixes spread from Italy to Brazil to South Korea.",
+      "category": "meme",
+      "tags": ["lockdown", "quarantine", "global"],
+      "confidence": "high"
+    }
+  ],
+  "2020-04": [
+    {
+      "title": "Zoom culture becomes the default meeting room",
+      "description": "Virtual backgrounds, mute-button fails, and 'you're on mute' became shared office humor worldwide.",
+      "category": "tech",
+      "tags": ["zoom", "wfh", "remote-work"],
+      "confidence": "high"
+    },
+    {
+      "title": "Sourdough starter posts dominate feeds",
+      "description": "Bread-baking tutorials and starter-naming jokes spread across Instagram, TikTok, and Facebook groups.",
+      "category": "meme",
+      "tags": ["sourdough", "baking", "lockdown"],
+      "confidence": "medium"
+    }
+  ],
+  "2020-05": [
+    {
+      "title": "6ix9ine's return sparks global rap-twitter frenzy",
+      "description": "Gooba and the rainbow-haired spectacle dominated hip-hop discourse across US, UK, and Latin American fan accounts.",
+      "category": "music",
+      "tags": ["6ix9ine", "hip-hop", "viral"],
+      "confidence": "medium"
+    },
+    {
+      "title": "PS5 and Xbox Series X hype cycle peaks online",
+      "description": "Console design reveals, spec debates, and preorder panic threads trended on Reddit, Twitter, and gaming forums globally.",
+      "category": "gaming",
+      "tags": ["ps5", "xbox", "consoles"],
+      "confidence": "high"
+    }
+  ],
+  "2020-08": [
+    {
+      "title": "TikTok ban discourse spills across markets",
+      "description": "Creators in the US, India, and Europe debated platform bans while cross-posting to Reels and Triller.",
+      "category": "internet_drama",
+      "tags": ["tiktok", "ban", "creators"],
+      "confidence": "high"
+    },
+    {
+      "title": "WAP release drives global reaction memes",
+      "description": "Cardi B and Megan Thee Stallion's track sparked remixes, reaction videos, and debate threads in dozens of countries.",
+      "category": "music",
+      "tags": ["wap", "cardi-b", "viral"],
+      "confidence": "high"
+    }
+  ],
+  "2020-10": [
+    {
+      "title": "Among Us surges as the quarantine party game",
+      "description": "Sus jokes, emergency meeting memes, and streamer collabs made InnerSloth's game a cross-platform phenomenon.",
+      "category": "gaming",
+      "tags": ["among-us", "streaming", "memes"],
+      "confidence": "high"
+    },
+    {
+      "title": "Borat Subsequent Moviefilm drops with instant meme fuel",
+      "description": "Rudy Giuliani scene reactions and 'very nice' callbacks spread through Twitter, YouTube, and regional comedy pages.",
+      "category": "movie_tv",
+      "tags": ["borat", "amazon", "memes"],
+      "confidence": "high"
+    }
+  ],
+  "2020-11": [
+    {
+      "title": "US election memes go international",
+      "description": "Nevada-counting jokes, map memes, and 'I hope Joe Biden reads this' formats were recycled by non-US accounts.",
+      "category": "meme",
+      "tags": ["election", "politics", "global-reactions"],
+      "confidence": "high"
+    },
+    {
+      "title": "Platform-wide meme cycles spike around major news",
+      "description": "World-event reactions traveled between Twitter, TikTok, and regional meme pages within hours.",
+      "category": "viral_moment",
+      "tags": ["news", "memes", "international"],
+      "confidence": "medium"
+    }
+  ],
+  "2020-03-11": [
+    {
+      "title": "WHO declares COVID-19 a pandemic",
+      "description": "The announcement triggered a wave of informational threads, anxiety memes, and live news dashboards worldwide.",
+      "category": "news",
+      "tags": ["covid", "who", "pandemic"],
+      "source_name": "WHO",
+      "confidence": "high"
+    }
+  ],
+  "2020-03-20": [
+    {
+      "title": "Animal Crossing release day social flood",
+      "description": "Launch-day screenshots and island tours dominated gaming Twitter and Instagram across time zones.",
+      "category": "gaming",
+      "tags": ["animal-crossing", "launch"],
+      "confidence": "high"
+    }
+  ]
+}
