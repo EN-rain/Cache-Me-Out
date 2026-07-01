@@ -23,22 +23,22 @@ describe("admin auth", () => {
 
   it("validates magic token lifecycle", async () => {
     const { token } = await startAdminAccess();
-    expect(verifyMagicToken(token)).toBe(true);
+    expect(await verifyMagicToken(token)).toBe(true);
   });
 
   it("rejects wrong TOTP code", () => {
     expect(verifyTotpCode("000000")).toBe(false);
   });
 
-  it("creates and retrieves session", () => {
-    const sessionId = createAdminSession("fp-123");
-    const session = getSession(sessionId);
+  it("creates and retrieves session", async () => {
+    const sessionId = await createAdminSession("fp-123");
+    const session = await getSession(sessionId);
     expect(session).not.toBeNull();
     expect(session?.fingerprint).toBe("fp-123");
   });
 
-  it("wrong TOTP never creates session via verify flow", () => {
-    const sessionBefore = getSession("nonexistent");
+  it("wrong TOTP never creates session via verify flow", async () => {
+    const sessionBefore = await getSession("nonexistent");
     expect(sessionBefore).toBeNull();
     expect(verifyTotpCode("123456")).toBe(false);
   });

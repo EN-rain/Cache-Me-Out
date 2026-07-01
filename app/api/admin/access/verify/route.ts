@@ -26,7 +26,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "Missing credentials" }, { status: 400 });
   }
 
-  if (!verifyMagicToken(token)) {
+  if (!(await verifyMagicToken(token))) {
     return NextResponse.json({ error: "Invalid or expired link" }, { status: 401 });
   }
 
@@ -34,9 +34,9 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "Invalid code" }, { status: 401 });
   }
 
-  invalidateMagicToken(token);
+  await invalidateMagicToken(token);
   const fingerprint = buildFingerprint(request);
-  const sessionId = createAdminSession(fingerprint);
+  const sessionId = await createAdminSession(fingerprint);
   await setSessionCookie(sessionId);
 
   return NextResponse.json({ success: true });

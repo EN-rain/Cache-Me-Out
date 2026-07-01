@@ -6,6 +6,7 @@ import { logAdminAction } from "./audit";
 export type EntryFilters = {
   status?: EntryStatus;
   category?: string;
+  source?: string;
   search?: string;
   period?: string;
 };
@@ -17,6 +18,7 @@ export async function listEntries(filters: EntryFilters = {}): Promise<CapsuleEn
   if (filters.status) query = query.eq("status", filters.status);
   if (filters.category) query = query.eq("category", filters.category);
   if (filters.period) query = query.eq("period_start", filters.period);
+  if (filters.source) query = query.ilike("source_name", `%${filters.source}%`);
   if (filters.search) {
     query = query.or(`title.ilike.%${filters.search}%,description.ilike.%${filters.search}%`);
   }

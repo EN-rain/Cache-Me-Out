@@ -5,7 +5,7 @@ import type { PeriodLevel } from "@/lib/capsule/types";
 import { logAdminAction } from "@/lib/admin/audit";
 
 export async function POST(request: NextRequest) {
-  const blocked = await adminGuard(request);
+  const blocked = await adminGuard(request, { requireFresh: true });
   if (blocked) return blocked;
 
   try {

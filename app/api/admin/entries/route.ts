@@ -9,11 +9,12 @@ export async function GET(request: NextRequest) {
 
   const status = request.nextUrl.searchParams.get("status") ?? undefined;
   const category = request.nextUrl.searchParams.get("category") ?? undefined;
+  const source = request.nextUrl.searchParams.get("source") ?? undefined;
   const search = request.nextUrl.searchParams.get("search") ?? undefined;
   const period = request.nextUrl.searchParams.get("period") ?? undefined;
 
   try {
-    const entries = await listEntries({ status: status as never, category, search, period });
+    const entries = await listEntries({ status: status as never, category, source, search, period });
     return NextResponse.json(entries);
   } catch (error) {
     return NextResponse.json({ error: String(error) }, { status: 500 });
@@ -21,7 +22,7 @@ export async function GET(request: NextRequest) {
 }
 
 export async function POST(request: NextRequest) {
-  const blocked = await adminGuard(request);
+  const blocked = await adminGuard(request, { requireFresh: true });
   if (blocked) return blocked;
 
   try {

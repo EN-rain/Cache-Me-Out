@@ -1,5 +1,28 @@
 import nodemailer from "nodemailer";
 
+function sleep(ms: number): Promise<void> {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+async function withBackoff(send: () => Promise<void>): Promise<void> {
+  const attempts = parseInt(process.env.EMAIL_RETRY_ATTEMPTS ?? "3", 10) || 3;
+  let lastError: unknown;
+
+  for (let attempt = 1; attempt <= attempts; attempt++) {
+    try {
+      await send();
+      return;
+    } catch (error) {
+      lastError = error;
+      if (attempt < attempts) {
+        await sleep(250 * 2 ** (attempt - 1));
+      }
+    }
+  }
+
+  throw lastError;
+}
+
 async function sendViaResend(
   adminEmail: string,
   verifyUrl: string
@@ -69,9 +92,9 @@ export async function sendMagicLinkEmail(verifyUrl: string): Promise<void> {
   const provider = process.env.EMAIL_PROVIDER ?? (process.env.RESEND_API_KEY ? "resend" : "smtp");
 
   if (provider === "resend") {
-    await sendViaResend(adminEmail, verifyUrl);
+    await withBackoff(() => sendViaResend(adminEmail, verifyUrl));
     return;
   }
 
-  await sendViaSmtp(adminEmail, verifyUrl);
+  await withBackoff(() => sendViaSmtp(adminEmail, verifyUrl));
 }

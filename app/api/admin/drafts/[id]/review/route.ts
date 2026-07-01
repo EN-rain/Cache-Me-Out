@@ -7,7 +7,7 @@ import { revalidatePeriod } from "@/lib/cache/revalidate";
 type Props = { params: Promise<{ id: string }> };
 
 export async function PATCH(request: NextRequest, { params }: Props) {
-  const blocked = await adminGuard(request);
+  const blocked = await adminGuard(request, { requireFresh: true });
   if (blocked) return blocked;
 
   const { id } = await params;

@@ -87,3 +87,13 @@ export type PeriodSeo = {
   og_image_url: string | null;
   updated_at: string;
 };
+
+export type TrendSignal = {
+  id: string;
+  period_key: string;
+  source: string;
+  query: string;
+  score: number;
+  raw_data: Record<string, unknown>;
+  created_at: string;
+};

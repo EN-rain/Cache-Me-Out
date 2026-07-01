@@ -74,6 +74,29 @@ create table admin_access_tokens (
   created_at timestamptz not null default now()
 );
 
+create table admin_sessions (
+  id uuid primary key default gen_random_uuid(),
+  session_hash text not null unique,
+  fingerprint text not null,
+  expires_at timestamptz not null,
+  last_seen_at timestamptz not null default now(),
+  last_reauthenticated_at timestamptz not null default now(),
+  created_at timestamptz not null default now()
+);
+
+create table trend_signals (
+  id uuid primary key default gen_random_uuid(),
+  period_key text not null,
+  source text not null,
+  query text not null,
+  score numeric not null default 0,
+  raw_data jsonb not null default '{}'::jsonb,
+  created_at timestamptz not null default now()
+);
+
 create index capsule_entries_period_status_idx on capsule_entries (period_start, status);
 create index capsule_entries_slug_idx on capsule_entries (slug);
 create index capsule_drafts_period_review_idx on capsule_drafts (period_key, review_status);
+create index admin_access_tokens_expires_idx on admin_access_tokens (expires_at, used_at);
+create index admin_sessions_expires_idx on admin_sessions (expires_at);
+create index trend_signals_period_score_idx on trend_signals (period_key, score desc);

@@ -56,8 +56,9 @@ Unauthorized and mobile requests to `/admin/*` and `/api/admin/*` return **404 N
 ## Architecture
 
 - **Public routes**: `/2020`, `/2020/[month]`, `/2020/[month]/[day]`
-- **Admin routes**: `/admin`, `/admin/entries`, `/admin/generator`, `/admin/review`, `/admin/preview`
+- **Admin routes**: `/admin`, `/admin/entries`, `/admin/importer`, `/admin/generator`, `/admin/review`, `/admin/preview`, `/admin/seo`
 - **Generator**: reads `data/curated-2020.json` only — never publishes directly
+- **Importer**: turns admin-entered keywords into reviewable drafts using Wikimedia Pageviews and optional GDELT signals
 - **Preview**: desktop-only, shows `DRAFT PREVIEW` watermark
 
 See `plan.md` and `development-plan.md` for full product spec.

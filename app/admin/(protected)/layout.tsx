@@ -15,9 +15,11 @@ export default async function ProtectedAdminLayout({
           <Link href="/admin" className="font-bold hover:text-[var(--color-accent)]">Dashboard</Link>
           <Link href="/admin/entries" className="hover:text-[var(--color-accent)]">Entries</Link>
           <Link href="/admin/entries/new" className="hover:text-[var(--color-accent)]">New Entry</Link>
+          <Link href="/admin/importer" className="hover:text-[var(--color-accent)]">Importer</Link>
           <Link href="/admin/generator" className="hover:text-[var(--color-accent)]">Generator</Link>
           <Link href="/admin/review" className="hover:text-[var(--color-accent)]">Review</Link>
           <Link href="/admin/preview" className="hover:text-[var(--color-accent)]">Preview</Link>
+          <Link href="/admin/seo" className="hover:text-[var(--color-accent)]">SEO</Link>
         </nav>
       </header>
       <main className="px-6 py-8">{children}</main>
